@@ -32,33 +32,9 @@ jobs:
           echo "Adding files to directory"
     - name: Creating file
       run: |
-        if [ "${{ github.event.inputs.charts }}" != "Charts.yaml" ]
+        if [ "${{ github.event.inputs.config }}" != "Config.yaml" ]
         then
-          echo "${{ github.event.inputs.chart }}" > ${{ github.event.inputs.directory }}/Chart.yaml
-        fi
-        if [ "${{ github.event.inputs.app }}" != "app.yaml" ]
-        then
-          echo "${{ github.event.inputs.app }}" > ${{ github.event.inputs.directory }}/app.yaml
-        fi
-        if [ "${{ github.event.inputs.dev-values }}" != "dev-values.yaml" ]
-        then
-          echo "${{ github.event.inputs.dev-values }}" > ${{ github.event.inputs.directory }}/dev-values.yaml
-        fi
-        if [ "${{ github.event.inputs.dev_values }}" != "dev_values.yaml" ]
-        then
-          echo "${{ github.event.inputs.dev_values }}" > ${{ github.event.inputs.directory }}/dev_values.yaml
-        fi
-        if [ "${{ github.event.inputs.override_values }}" != "override_values.yaml" ]
-        then
-          echo "${{ github.event.inputs.override_values }}" > ${{ github.event.inputs.directory }}/override_values.yaml
-        fi
-        if [ "${{ github.event.inputs.ops_config }}" != "ops_config.ini" ]
-        then
-          echo "${{ github.event.inputs.ops_config }}" > ${{ github.event.inputs.directory }}/ops_config.ini
-        fi
-        if [ "${{ github.event.inputs.values }}" != "values.yaml" ]
-        then
-          echo "${{ github.event.inputs.values }}" > ${{ github.event.inputs.directory }}/values.yaml
+          echo "${{ github.event.inputs.chart }}" > ${{ github.event.inputs.directory }}/Config.yaml
         fi
     - name: git config
       run: |
