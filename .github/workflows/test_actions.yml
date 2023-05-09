@@ -5,31 +5,7 @@ on:
     inputs:
       chart:
         description: 'provide charts content'
-        default: 'Chart.yaml'
-        required: true
-      app:
-        description: 'provide charts content'
-        default: 'app.yaml'
-        required: true
-      dev-values:
-        description: 'provide charts content'
-        default: 'dev-values.yaml'
-        required: true
-      dev_values:
-        description: 'provide charts content'
-        default: 'dev_values.yaml'
-        required: true
-      override_values:
-        description: 'provide charts content'
-        default: 'override_values.yaml'
-        required: true
-      ops_config:
-        description: 'provide charts content'
-        default: 'ops_config.ini'
-        required: true
-      values:
-        description: 'provide charts content'
-        default: 'values.yaml'
+        default: 'config.yaml'
         required: true
       directory:
         description: 'Directory where the file will be saved(please do not provide slash "/" in start and end)'
