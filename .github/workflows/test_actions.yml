@@ -3,7 +3,7 @@ name: Playout Orchastrator
 on:
   workflow_dispatch:
     inputs:
-      chart:
+      config:
         description: 'provide charts content'
         default: 'config.yaml'
         required: true
