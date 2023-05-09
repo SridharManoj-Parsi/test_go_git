@@ -34,7 +34,7 @@ jobs:
       run: |
         if [ "${{ github.event.inputs.config }}" != "Config.yaml" ]
         then
-          echo "${{ github.event.inputs.chart }}" > ${{ github.event.inputs.directory }}/Config.yaml
+          echo "${{ github.event.inputs.config }}" > ${{ github.event.inputs.directory }}/Config.yaml
         fi
     - name: git config
       run: |
