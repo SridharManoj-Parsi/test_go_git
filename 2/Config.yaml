@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: 2
+  labels:
+    alertmanagerConfig: default
+spec:
+  route:
+    groupBy: ['...']
+    receiver: 'default-receiver'
+    routes:
+    - receiver: 2
+      groupWait: 10s
+      matchers:
+      - name: feed
+        value: amgx0021
+  receivers:
+  - name: default-receiver
+  - name: 2
+    emailConfigs:
+    - sendResolved: false
+      to: sridhartesting2@amagi.com
+      html: {{ template emaildefaulthtml . }}
+      headers:
+        subject: Alert
+
+
