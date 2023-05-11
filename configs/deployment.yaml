@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-kustomize
+      app: nginx-kustomize-a
   template:
     metadata:
       labels:
-        app: nginx-kustomize
+        app: nginx-kustomize-a
     spec:
       containers:
       - image: nginx
