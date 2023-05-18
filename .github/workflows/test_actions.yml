@@ -29,7 +29,7 @@ jobs:
         ref: ${{ github.event.inputs.branch }}
     - uses: ahmadnassri/action-workflow-queue@v1
     - name: Initiating workflow
-      run: echo "Initiating workflow"
+      run: sleep 5m
     - name: Creating directory in branch
       run: |
           echo "creating directory receivers"
