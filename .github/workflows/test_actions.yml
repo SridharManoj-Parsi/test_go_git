@@ -1,25 +1,5 @@
 name: AlertManager Config
 
-on:
-  workflow_dispatch:
-    inputs:
-      config:
-        description: 'provide config with receivers content'
-        default: 'config'
-        required: true
-      filename:
-        description: 'name of the file to be saved'
-        default: 'filename'
-        required: true
-      branch:
-        description: 'Branch name'
-        default: 'playouts-dev'
-        required: true
-      kustomize:
-        description: 'kustomize.yaml file contents'
-        default: 'kustomise.yaml'
-        required: true
-
 jobs:
   greet:
     runs-on: ubuntu-latest
@@ -30,29 +10,5 @@ jobs:
     - uses: ahmadnassri/action-workflow-queue@v1
     - name: Initiating workflow
       run: sleep 5m
-    - name: Creating directory in branch
-      run: |
-          echo "creating directory receivers"
-          mkdir -p receivers
-          echo "Adding files to directory"
-    - name: Creating file
-      run: |
-        if [ "${{ github.event.inputs.config }}" != "config" ]
-        then
-          echo "${{ github.event.inputs.config }}" > receivers/${{github.event.inputs.filename}}.yaml
-        fi
-        if [ "${{ github.event.inputs.kustomize }}" != "kustomize.yaml" ]
-        then
-          echo "${{ github.event.inputs.kustomize }}" > receivers/kustomization.yaml
-        fi
-    - name: git config
-      run: |
-        git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
-        git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
-    - name: git add, commit and push
-      run: |
-        git add .
-        git commit -m "Added new file ${{github.event.inputs.filename}}.yaml and updated kustomization.yaml"
-        git push
     - name: Workflow completion
       run: echo "Task completed."
