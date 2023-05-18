@@ -1,5 +1,8 @@
 name: AlertManager Config
-concurrency: staging_environment
+concurrency:
+  group: testing
+  cancel-in-progress: false
+
 on:
   workflow_dispatch:
     inputs:
