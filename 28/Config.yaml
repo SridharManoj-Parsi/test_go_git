@@ -13,15 +13,3 @@ spec:
       groupWait: 10s
       matchers:
       - name: feed
-        value: amg032423489
-  receivers:
-  - name: default-receiver
-  - name: 28
-    emailConfigs:
-    - sendResolved: false
-      to: sridhartesting5@amagi.com
-      html: {{ template emaildefaulthtml . }}
-      headers:
-        subject: Alert
-
-
