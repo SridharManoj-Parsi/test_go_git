@@ -1,5 +1,12 @@
 name: AlertManager Config
 
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch name'
+        default: 'playouts-dev'
+        required: true
 jobs:
   greet:
     runs-on: ubuntu-latest
